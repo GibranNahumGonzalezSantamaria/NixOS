@@ -2,11 +2,6 @@
   inputs = {
     NixPkgs.url = "github:NixOS/NixPkgs/nixos-unstable";
 
-    NixOSHardware = {
-      url = "github:NixOS/NixOS-Hardware";
-      inputs.nixpkgs.follows = "NixPkgs";
-    };
-
     NUR = {
       url = "github:Nix-Community/NUR";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -39,7 +34,6 @@
       NixPkgs,
       HomeManager,
       NUR,
-      NixOSHardware,
       Stylix,
       Spicetify,
       PlasmaManager,
@@ -168,7 +162,6 @@
           Color = "blue";
 
           extraSystemModules = [
-            NixOSHardware.nixosModules.lenovo-thinkpad-t14-amd-gen2
             ./Home/Packages/VirtManager.nix
           ];
 
